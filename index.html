@@ -1,11 +1,14 @@
 
+
 <!doctype html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#07141b">
-<title>AI'Han · Computer Vision Robotics Lab · Cumulative V5 · Sync Engine</title>
+<title>AI'Han · Computer Vision Robotics Lab · Cumulative V5.1 · Sync Engine</title>
+<meta name="description" content="AI'Han Computer Vision Robotics Lab: MediaPipe hand, face and body tracking with synchronized Three.js robot joint control.">
+<meta name="author" content="AI'Han Academy · Ayhan Bozkurt">
 <style>
 :root{
   --bg:#061015;--bg2:#0b1d24;--panel:rgba(9,27,34,.72);--panel2:rgba(13,38,47,.84);
@@ -81,6 +84,133 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;z-i
 .mode[data-mode="pose"].active{border-color:rgba(103,167,255,.72)}
 @media(max-width:780px){.mode-layer{left:12px;right:12px;top:58px;max-width:none;text-align:left}.stage-help{white-space:normal;width:calc(100% - 28px);text-align:center}}
 
+
+
+/* =========================================================
+   CUMULATIVE V5.1 — AI'HAN ACADEMY SOCIAL FOOTER
+   The footer is a real grid row, not an overlay; it never
+   covers the 3D robot, camera feed or control panels.
+   ========================================================= */
+.app{grid-template-rows:auto minmax(0,1fr) auto}
+.aihan-site-footer{
+  min-height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:7px 18px;
+  border-top:1px solid rgba(137,255,230,.17);
+  background:
+    linear-gradient(90deg,rgba(5,18,23,.94),rgba(8,27,34,.88) 52%,rgba(5,18,23,.94));
+  box-shadow:0 -12px 34px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.025);
+  backdrop-filter:blur(18px) saturate(125%);
+  -webkit-backdrop-filter:blur(18px) saturate(125%);
+  position:relative;
+  z-index:22;
+}
+.aihan-site-footer:before{
+  content:"";
+  position:absolute;
+  left:18px;
+  right:18px;
+  top:-1px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(123,255,217,.46),transparent);
+  opacity:.72;
+  pointer-events:none;
+}
+.aihan-footer-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.aihan-footer-emblem{
+  width:29px;
+  height:29px;
+  flex:0 0 29px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(123,255,217,.32);
+  border-radius:9px;
+  color:var(--mint);
+  background:radial-gradient(circle at 34% 27%,rgba(123,255,217,.20),rgba(8,27,34,.78) 68%);
+  box-shadow:inset 0 0 15px rgba(123,255,217,.055),0 0 19px rgba(123,255,217,.055);
+}
+.aihan-footer-emblem svg{width:17px;height:17px}
+.aihan-footer-copy{min-width:0;line-height:1.15}
+.aihan-footer-copy strong{
+  display:block;
+  overflow:hidden;
+  color:var(--ink);
+  font-size:11px;
+  font-weight:780;
+  letter-spacing:.09em;
+  text-overflow:ellipsis;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.aihan-footer-copy small{
+  display:block;
+  margin-top:3px;
+  overflow:hidden;
+  color:var(--muted);
+  font:9px ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.035em;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.aihan-social-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.aihan-social-link{
+  min-height:30px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:5px 9px;
+  border:1px solid rgba(137,255,230,.13);
+  border-radius:9px;
+  color:#accbc5;
+  background:rgba(255,255,255,.018);
+  font-size:10px;
+  font-weight:680;
+  letter-spacing:.025em;
+  text-decoration:none;
+  transition:transform .18s ease,border-color .18s ease,color .18s ease,background .18s ease,box-shadow .18s ease;
+}
+.aihan-social-link svg{width:14px;height:14px;flex:0 0 auto}
+.aihan-social-link:hover,
+.aihan-social-link:focus-visible{
+  color:var(--mint);
+  border-color:rgba(123,255,217,.43);
+  background:rgba(123,255,217,.07);
+  box-shadow:0 8px 22px rgba(0,0,0,.2),inset 0 0 12px rgba(123,255,217,.035);
+  transform:translateY(-1px);
+  outline:none;
+}
+.aihan-social-link:active{transform:translateY(0)}
+.aihan-social-link .external-mark{width:10px;height:10px;opacity:.52}
+@media(max-width:1100px){
+  .aihan-site-footer{min-height:50px;position:relative}
+}
+@media(max-width:780px){
+  .aihan-site-footer{align-items:flex-start;flex-direction:column;gap:8px;padding:10px 12px}
+  .aihan-social-links{justify-content:flex-start;width:100%}
+  .aihan-social-link{flex:1 1 auto}
+}
+@media(max-width:480px){
+  .aihan-footer-copy small{white-space:normal}
+  .aihan-social-link{flex:1 1 0;padding-inline:7px}
+  .aihan-social-link .social-owner{display:none}
+  .aihan-social-link .external-mark{display:none}
+}
+
 </style>
 <script type="importmap">
 {
@@ -92,7 +222,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;z-i
 }
 </script>
 </head>
-<body>
+<body data-aihan-version="5.1-social-footer">
 <div id="boot" aria-label="AI'Han sistem açılışı">
   <div class="boot-image"></div><div class="boot-grid"></div><div class="boot-scan"></div>
   <div class="boot-copy">
@@ -202,8 +332,47 @@ bone.quaternion.slerp(bone.userData.targetQuaternion, alpha);
     </div>
   </section>
 </main>
+
+<footer class="aihan-site-footer" aria-label="AI'Han Academy ve Ayhan Bozkurt bağlantıları">
+  <div class="aihan-footer-brand">
+    <span class="aihan-footer-emblem" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M4 17.5 12 4l8 13.5M7.7 13h8.6M8.2 18.4l3.8-6.1 3.8 6.1" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="aihan-footer-copy">
+      <strong>AI'Han Academy · Ayhan Bozkurt</strong>
+      <small>© <span id="aihanFooterYear">2026</span> · Yalnızca eğitim amaçlı kullanım · Ticari hakları saklıdır.</small>
+    </span>
+  </div>
+
+  <nav class="aihan-social-links" aria-label="Sosyal medya profilleri">
+    <a class="aihan-social-link" href="https://github.com/ayhanbzkrt" target="_blank" rel="noopener noreferrer" aria-label="AI'Han Academy GitHub profilini yeni sekmede aç">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .8A11.2 11.2 0 0 0 8.46 22.63c.56.1.77-.24.77-.54v-2.15c-3.16.69-3.83-1.34-3.83-1.34-.51-1.32-1.26-1.67-1.26-1.67-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.66 1.23 3.31.94.1-.73.4-1.23.72-1.52-2.53-.29-5.19-1.26-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.45.11-3.01 0 0 .95-.31 3.09 1.16A10.72 10.72 0 0 1 12 5.9c.95 0 1.91.13 2.81.38 2.13-1.47 3.08-1.16 3.08-1.16.62 1.56.23 2.72.11 3.01.73.79 1.17 1.81 1.17 3.05 0 4.38-2.67 5.34-5.21 5.62.41.35.77 1.05.77 2.11v3.18c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+      <span>GitHub <span class="social-owner">· AI'Han Academy</span></span>
+      <svg class="external-mark" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3h7v7M13 3 6.5 9.5M12 9.5V13H3V4h3.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+
+    <a class="aihan-social-link" href="https://www.linkedin.com/in/ayhanbozkurt/" target="_blank" rel="noopener noreferrer" aria-label="Ayhan Bozkurt LinkedIn profilini yeni sekmede aç">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.34 3.5A2.34 2.34 0 1 1 .66 3.5a2.34 2.34 0 0 1 4.68 0ZM.99 8.12h4.7V23H.99V8.12Zm7.6 0h4.51v2.03h.06c.63-1.19 2.16-2.45 4.45-2.45 4.76 0 5.64 3.13 5.64 7.2V23h-4.7v-7.18c0-1.71-.03-3.92-2.39-3.92-2.39 0-2.76 1.87-2.76 3.79V23H8.59V8.12Z"/></svg>
+      <span>LinkedIn <span class="social-owner">· Ayhan Bozkurt</span></span>
+      <svg class="external-mark" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3h7v7M13 3 6.5 9.5M12 9.5V13H3V4h3.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+
+    <a class="aihan-social-link" href="https://medium.com/@ayhanbzkrt" target="_blank" rel="noopener noreferrer" aria-label="Ayhan Bozkurt Medium profilini yeni sekmede aç">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.01 6.25a.66.66 0 0 0-.22-.56L.16 3.73v-.29h5.07l3.92 8.6 3.45-8.6h4.84v.29l-1.4 1.34a.4.4 0 0 0-.16.38v9.86a.4.4 0 0 0 .16.38l1.37 1.34v.29h-6.9v-.29l1.42-1.38c.14-.14.14-.18.14-.38V7.3L8.1 17.28h-.52L2.96 7.3v6.71a.91.91 0 0 0 .25.76l1.85 2.24v.29H0v-.29l1.85-2.24a.88.88 0 0 0 .24-.76V6.25h-.08Zm17.17-.96a.43.43 0 0 0-.16-.36l-1.21-1.16v-.29H24v.29l-1.17 1.13a.43.43 0 0 0-.18.39v10.17a.43.43 0 0 0 .18.39L24 16.98v.29h-6.19v-.29l1.21-1.16a.43.43 0 0 0 .16-.36V5.29Z"/></svg>
+      <span>Medium <span class="social-owner">· @ayhanbzkrt</span></span>
+      <svg class="external-mark" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3h7v7M13 3 6.5 9.5M12 9.5V13H3V4h3.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </nav>
+</footer>
 </div>
 <div class="toast" id="toast"></div>
+
+<script>
+  const aihanFooterYear = document.getElementById('aihanFooterYear');
+  if (aihanFooterYear) aihanFooterYear.textContent = new Date().getFullYear();
+</script>
 
 <script type="module">
 
